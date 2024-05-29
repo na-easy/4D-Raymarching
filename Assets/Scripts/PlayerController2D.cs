@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-// ****************** Player 3D Movement ****************** 
+// ****************** Player 2D Movement ****************** 
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2D : MonoBehaviour
 {
     public float playerSpeed;
     public float DeathDistance;
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < DeathDistance)
+        if (transform.position.y < DeathDistance)
         {
             transform.position = StartPos;
         }
@@ -29,19 +29,15 @@ public class PlayerController : MonoBehaviour
         {
             MovePlayer();
         }
-
     }
 
     void MovePlayer()
     {
-
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        if (Input.GetAxis("Horizontal") != 0)
         {
-            Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+            Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, 0).normalized;
             transform.Translate(direction * Time.deltaTime * playerSpeed, Space.World);
-            transform.LookAt(direction + transform.position);
         }
-        
     }
 
     public void EndGame()
