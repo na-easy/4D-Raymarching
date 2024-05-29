@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7261883309578018627}
   - component: {fileID: 7261883309578018626}
-  - component: {fileID: 7261883309578018625}
   - component: {fileID: 7261883309578018624}
   m_Layer: 0
   m_Name: Player
@@ -49,20 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987e7c6be3abb46e2b072d597998d8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7261883309578018625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7261883309578018631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03d2bd7cbb2b415bac2b8baaf77d3db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 10
-  DeathDistance: -10
 --- !u!114 &7261883309578018624
 MonoBehaviour:
   m_ObjectHideFlags: 0
