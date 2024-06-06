@@ -24,8 +24,13 @@ public class PlayerSelect : MonoBehaviour
         material.Value.SetColor("_Color", Color.blue);
     }
 
+    public void White()
+    {
+        material.Value.SetColor("_Color", Color.white);
+    }
+   
     public void Continue()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Loading.SwitchToScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
