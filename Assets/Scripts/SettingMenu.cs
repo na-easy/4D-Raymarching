@@ -12,6 +12,7 @@ public class SettingMenu : MonoBehaviour
 {
     public TMP_Dropdown resolutionDropdown;
     public TMP_Dropdown qualityDropdown;
+    public Toggle fullscreenToggle;
 
     Resolution[] resolutions;
 
@@ -36,15 +37,15 @@ public class SettingMenu : MonoBehaviour
         LoadSettings(currentResolutionIndex);
     }
 
-    public void SetFullscreen(bool isFullscreen)
+    public void SetFullscreen()
     {
-        Screen.fullScreen = isFullscreen;
+        Screen.fullScreen = fullscreenToggle.isOn;
     }
 
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Screen.SetResolution(resolution.width, resolution.height, fullscreenToggle.isOn);
     }
 
     public void SetQuality(int qualityIndex)
@@ -72,6 +73,6 @@ public class SettingMenu : MonoBehaviour
         if (PlayerPrefs.HasKey("FullscreenPreference"))
             Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         else
-            Screen.fullScreen = true;
+            Screen.fullScreen = fullscreenToggle.isOn;
     }
 }

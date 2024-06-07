@@ -3883,6 +3883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 6194768598616655660}
   qualityDropdown: {fileID: 6194768599033895659}
+  fullscreenToggle: {fileID: 6194768599940177955}
 --- !u!1 &6194768599768336543
 GameObject:
   m_ObjectHideFlags: 0
@@ -4438,7 +4439,7 @@ MonoBehaviour:
       - m_Target: {fileID: 6842532474929557505}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
