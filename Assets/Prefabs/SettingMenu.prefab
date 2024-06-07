@@ -1718,14 +1718,14 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6194768599221032446}
+      - m_Target: {fileID: 6842532474929557505}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2329,23 +2329,29 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "\u041D\u0438\u0437\u043A\u0438\u0435"
+    - m_Text: Very Low
       m_Image: {fileID: 0}
-    - m_Text: "\u0421\u0440\u0435\u0434\u043D\u0438\u0435"
+    - m_Text: Low
       m_Image: {fileID: 0}
-    - m_Text: "\u0412\u044B\u0441\u043E\u043A\u0438\u0435"
+    - m_Text: Medium
+      m_Image: {fileID: 0}
+    - m_Text: High
+      m_Image: {fileID: 0}
+    - m_Text: Very High
+      m_Image: {fileID: 0}
+    - m_Text: Ultra
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6194768599221032446}
+      - m_Target: {fileID: 6842532474929557505}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2436,7 +2442,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6194768599221032445}
-  - component: {fileID: 6194768599221032446}
   m_Layer: 0
   m_Name: SettingMenu
   m_TagString: Untagged
@@ -2460,20 +2465,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6194768599221032446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6194768599221032444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2897b45dd0caeb948ad4a6d27cb09730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resolutionDropdown: {fileID: 6194768598616655660}
-  qualityDropdown: {fileID: 6194768599033895659}
 --- !u!1 &6194768599223063904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,6 +3779,7 @@ GameObject:
   - component: {fileID: 6194768599765439588}
   - component: {fileID: 6194768599765439579}
   - component: {fileID: 6194768599765439578}
+  - component: {fileID: 6842532474929557505}
   m_Layer: 5
   m_Name: SettingsMenuCanvas
   m_TagString: Untagged
@@ -3883,6 +3875,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6842532474929557505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194768599765439576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2897b45dd0caeb948ad4a6d27cb09730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 6194768598616655660}
+  qualityDropdown: {fileID: 6194768599033895659}
 --- !u!1 &6194768599768336543
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,7 +4441,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6842532474929557505}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 6
@@ -4445,7 +4451,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 1
 --- !u!1 &6194768600029970359
@@ -4941,7 +4947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6842532474929557505}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
         m_MethodName: SaveSettings
         m_Mode: 1

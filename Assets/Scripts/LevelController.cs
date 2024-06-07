@@ -31,8 +31,7 @@ public class LevelController : MonoBehaviour
         }
         else
         {
-            //if (levelComplete < sceneIndex) 
-                PlayerPrefs.SetInt("LevelComplete", sceneIndex);
+            PlayerPrefs.SetInt("LevelComplete", sceneIndex);
             Invoke("Teleport", 0f);
         }
     }

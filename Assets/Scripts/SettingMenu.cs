@@ -60,10 +60,10 @@ public class SettingMenu : MonoBehaviour
 
     public void LoadSettings(int currentResolutionIndex)
     {
-        if (PlayerPrefs.HasKey("QualitySettingPreference"))
-            qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
-        else
-            qualityDropdown.value = 3;
+        //if (PlayerPrefs.HasKey("QualitySettingPreference"))
+        //    qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
+        //else
+        //    qualityDropdown.value = 0;
         if (PlayerPrefs.HasKey("ResolutionPreference"))
             resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
         else
