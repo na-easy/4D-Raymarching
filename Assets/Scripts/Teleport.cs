@@ -8,8 +8,7 @@ public class Teleport : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        LevelController.instance.isEndGame();
-        //Loading.SwitchToScene(SceneManager.GetActiveScene().buildIndex + 1);
+        LevelController.instance.isEndGame(); 
     }
 
 }

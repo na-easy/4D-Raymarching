@@ -31,6 +31,6 @@ public class PlayerSelect : MonoBehaviour
    
     public void Continue()
     {
-        Loading.SwitchToScene(SceneManager.GetActiveScene().buildIndex + 1);
+        LevelController.instance.isEndGame();
     }
 }
