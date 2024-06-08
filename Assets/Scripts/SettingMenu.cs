@@ -34,7 +34,7 @@ public class SettingMenu : MonoBehaviour
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
-        LoadSettings(currentResolutionIndex);
+        LoadSettings();
     }
 
     public void SetFullscreen()
@@ -42,37 +42,37 @@ public class SettingMenu : MonoBehaviour
         Screen.fullScreen = fullscreenToggle.isOn;
     }
 
-    public void SetResolution(int resolutionIndex)
+    public void SetResolution()
     {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, fullscreenToggle.isOn);
+        Resolution resolution = resolutions[resolutionDropdown.value];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void SetQuality(int qualityIndex)
+    public void SetQuality()
     {
-        QualitySettings.SetQualityLevel(qualityIndex);
+        QualitySettings.SetQualityLevel(qualityDropdown.value);
     }
 
     public void SaveSettings()
     {
         PlayerPrefs.SetInt("QualitySettingPreference", qualityDropdown.value);
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
-        PlayerPrefs.SetInt("FullscreenPreference", System.Convert.ToInt32(Screen.fullScreen));
+        PlayerPrefs.SetInt("FullscreenPreference", System.Convert.ToInt32(fullscreenToggle.isOn));
     }
 
-    public void LoadSettings(int currentResolutionIndex)
+    public void LoadSettings()
     {
         if (PlayerPrefs.HasKey("QualitySettingPreference"))
             qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
         else
-            qualityDropdown.value = 0;
+            qualityDropdown.value = qualityDropdown.value;
         if (PlayerPrefs.HasKey("ResolutionPreference"))
             resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
         else
-            resolutionDropdown.value = currentResolutionIndex;
+            resolutionDropdown.value = resolutionDropdown.value;
         if (PlayerPrefs.HasKey("FullscreenPreference"))
-            Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
+            fullscreenToggle.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         else
-            Screen.fullScreen = fullscreenToggle.isOn;
+            fullscreenToggle.isOn = false;
     }
 }
