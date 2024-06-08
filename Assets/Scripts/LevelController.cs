@@ -10,8 +10,6 @@ public class LevelController : MonoBehaviour
     int sceneIndex;
     int levelComplete;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         if (instance == null) 
@@ -30,7 +28,7 @@ public class LevelController : MonoBehaviour
             Invoke("LoadStartScene", 0f);
         }
         else
-        {
+        {   
             PlayerPrefs.SetInt("LevelComplete", sceneIndex);
             Invoke("Teleport", 0f);
         }

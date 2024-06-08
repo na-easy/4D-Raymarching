@@ -7,6 +7,7 @@ public class Jump : MonoBehaviour
     public float jumpForce = 5.0f;
     private Rigidbody rb;
     public bool isGrounded = true;
+    public AudioSource clip;
 
     public float rayDistance = 1.0f;
 
@@ -24,6 +25,7 @@ public class Jump : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            clip.Play();
         }
 
     }
