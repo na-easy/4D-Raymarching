@@ -34,6 +34,20 @@ public class LevelSound : MonoBehaviour
         }
     }
 
+    public void SaveSoundSettings()
+    {
+        PlayerPrefs.SetFloat(MusicPref, musicSlider.value);
+        PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsSlider.value);
+    }
+
+    void OnApplicationFocus(bool inFocus)
+    {
+        if (!inFocus)
+        {
+            SaveSoundSettings();
+        }
+    }
+
     public void UpdateSound()
     {
         musicAudio.volume = musicSlider.value;
