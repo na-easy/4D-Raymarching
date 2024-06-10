@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +8,9 @@ public class LevelSound : MonoBehaviour
 {
     private static readonly string MusicPref = "MusicPref";
     private static readonly string SoundEffectsPref = "SoundEffectsPref";
-    public Slider musicSlider, soundEffectsSlider;
+
     private float musicFloat, soundEffectsFloat;
+    public Slider musicSlider, soundEffectsSlider;
 
     public AudioSource musicAudio;
     public AudioSource[] soundEffectsAudio;

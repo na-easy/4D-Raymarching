@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
+    private static readonly string LevelComplete = "LevelComplete";
+
     public Button level1;
     public Button level2;
     public Button level3;
@@ -14,7 +17,7 @@ public class LevelSelect : MonoBehaviour
 
     void Start()
     {
-        levelComplete = PlayerPrefs.GetInt("LevelComplete");
+        levelComplete = PlayerPrefs.GetInt(LevelComplete);
         level1.interactable = false;
         level2.interactable = false;
         level3.interactable = false;
@@ -54,6 +57,6 @@ public class LevelSelect : MonoBehaviour
         level2.interactable = false;
         level3.interactable = false;
         level4.interactable = false;
-        PlayerPrefs.DeleteKey("LevelComplete");
+        PlayerPrefs.DeleteKey(LevelComplete);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class VolumeManager : MonoBehaviour
 
     public AudioSource musicAudio;
     public AudioSource[] soundEffectsAudio;
-    // Start is called before the first frame update
+
     void Start()
     {
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
@@ -62,5 +63,4 @@ public class VolumeManager : MonoBehaviour
             soundEffectsAudio[i].volume = soundEffectsSlider.value;
         }
     }
-
 }

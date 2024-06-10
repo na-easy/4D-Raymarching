@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
@@ -17,12 +18,9 @@ public class Loading : MonoBehaviour
 
     public static void SwitchToScene(int sceneNum)
     {
-
         instance.componentAnimator.SetTrigger("SceneClosing");
 
         instance.loadingSceneOperation = SceneManager.LoadSceneAsync(sceneNum);
-
-        // Чтобы сцена не начала переключаться пока играет анимация closing:
         instance.loadingSceneOperation.allowSceneActivation = false;
 
         instance.LoadingProgressBar.fillAmount = 0;
@@ -35,7 +33,6 @@ public class Loading : MonoBehaviour
 
     private void Start()
     {
-
         componentAnimator = GetComponent<Animator>();
 
         if (shouldPlayOpeningAnimation)
@@ -44,7 +41,6 @@ public class Loading : MonoBehaviour
 
             instance.LoadingProgressBar.fillAmount = 1;
 
-            // Чтобы если следующий переход будет обычным SceneManager.LoadScene, не проигрывать анимацию opening:
             shouldPlayOpeningAnimation = false;
         }
     }

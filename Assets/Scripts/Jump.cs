@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    public float jumpForce = 5.0f;
     private Rigidbody rb;
+    
+    public float jumpForce = 5.0f;
     public bool isGrounded = true;
+
     public AudioSource clip;
 
     public float rayDistance = 1.0f;
@@ -18,7 +21,6 @@ public class Jump : MonoBehaviour
 
     void Update()
     {
-
         isGrounded = Physics.Raycast(rb.position + Vector3.up * 0.2f, transform.localScale.x * Vector3.down, rayDistance, LayerMask.GetMask("Ground"));
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -27,7 +29,5 @@ public class Jump : MonoBehaviour
             isGrounded = false;
             clip.Play();
         }
-
     }
-
 }

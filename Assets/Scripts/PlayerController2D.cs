@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using Unity.Mathematics;
 using UnityEngine;
-
-// ****************** Player 2D Movement ****************** 
 
 public class PlayerController2D : MonoBehaviour
 {
@@ -18,7 +17,6 @@ public class PlayerController2D : MonoBehaviour
         StartPos = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (transform.position.y < DeathDistance)
@@ -44,5 +42,4 @@ public class PlayerController2D : MonoBehaviour
     {
         endGame = true;
     }
-
 }
